@@ -15,10 +15,12 @@ Route::get('/', function () {
     return redirect('login');
 });
 
-Route::get('/login', function () {
-	return view('login');
-});
+Route::get('/login', 'LoginController@index');
+Route::post('/login', 'LoginController@authenticate');
+Route::get('/logout', 'LoginController@logout');
 
-Route::get('/admin', function(){
-	return view('admin');
+Route::group(['middleware' => 'admin'], function () {
+    Route::get('/admin', function(){
+		return view('admin');
+	});
 });

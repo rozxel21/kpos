@@ -6,7 +6,7 @@
     <meta charset="UTF-8">
     <meta name="description" content="">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-
+    <meta name="_token" content="{!! csrf_token() !!}"/>
     <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico" />
 
     <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic" rel="stylesheet">
@@ -35,15 +35,15 @@
 
                     <div class="title mt-4 mb-8">Log in to your account</div>
 
-                    <form name="loginForm" novalidate>
-
+                    <form id="kpos-login" action="{{ url('/login') }}" name="loginForm" novalidate>
+                        {{ csrf_field() }}
                         <div class="form-group mb-4">
-                            <input type="text" class="form-control" id="loginFormInputEmail" aria-describedby="emailHelp" placeholder=" " />
+                            <input type="text" class="form-control" name="username" id="loginFormInputEmail" aria-describedby="emailHelp" placeholder=" " />
                             <label for="loginFormInputEmail">Username</label>
                         </div>
 
                         <div class="form-group mb-4">
-                            <input type="password" class="form-control" id="loginFormInputPassword" placeholder="Password" />
+                            <input type="password" class="form-control" name="password" id="loginFormInputPassword" placeholder="Password" />
                             <label for="loginFormInputPassword">Password</label>
                         </div>
 
@@ -54,7 +54,11 @@
                 </div>
             </div>
         </div>
-    </main>
+    </main> 
 </body>
+
+<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
+<script type="text/javascript" src="{{ mix('js/all.js') }}"></script>
+<script type="text/javascript" src="js/kpos.js"></script>
 
 </html>

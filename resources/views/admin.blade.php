@@ -179,7 +179,7 @@
 
                                         <div class="dropdown-divider"></div>
 
-                                        <a class="dropdown-item" href="#">
+                                        <a class="dropdown-item" href="/logout">
                                             <div class="row no-gutters align-items-center flex-nowrap">
                                                 <i class="icon-logout"></i>
                                                 <span class="px-3">Logout</span>
