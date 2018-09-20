@@ -1,8 +1,11 @@
 {
-    "/css/app.css": "/css/app.css",
-    "/css/main.css": "/css/main.css",
+    "/css/all.css": "/css/all.css",
     "/js/all.js": "/js/all.js",
-    "/images/bootstrap-mini-logo.png": "/images/bootstrap-mini-logo.png",
-    "/images/fuse-mini-logo.png": "/images/fuse-mini-logo.png",
-    "/images/placeholder.png": "/images/placeholder.png"
+    "/assets/img/logo_white.png": "/assets/img/logo_white.png",
+    "/assets/img/logo.png": "/assets/img/logo.png",
+    "/assets/img/social-post-image.png": "/assets/img/social-post-image.png",
+    "/assets/img/editor_tray_2x.png": "/assets/img/editor_tray_2x.png",
+    "/assets/img/editor_tray.png": "/assets/img/editor_tray.png",
+    "/assets/img/linear_gradient.png": "/assets/img/linear_gradient.png",
+    "/assets/img/notes_lines.png": "/assets/img/notes_lines.png"
 }

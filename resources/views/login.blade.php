@@ -1,64 +1,54 @@
 <!DOCTYPE html>
-<html lang="en-us">
+<html>
 
-<head>
-    <title>Login</title>
-    <meta charset="UTF-8">
-    <meta name="description" content="">
-    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
-    <meta name="_token" content="{!! csrf_token() !!}"/>
-    <link rel="shortcut icon" type="image/x-icon" href="../assets/favicon.ico" />
+    <head>
+        <meta http-equiv="content-type" content="text/html;charset=UTF-8" />
+        <meta charset="utf-8" />
+        <meta name="_token" content="{!! csrf_token() !!}"/>
+        <title>KPOS | Login</title>
+        
+        <link rel="stylesheet" type="text/css" href="{{ mix('css/all.css') }}">
 
-    <link href="https://fonts.googleapis.com/css?family=Roboto:400,100,100italic,300,300italic,400italic,500,500italic,700italic,700,900,900italic" rel="stylesheet">
-
-    <!-- STYLESHEETS -->
-    <style type="text/css">
-            [fuse-cloak],
-            .fuse-cloak {
-                display: none !important;
+        <script type="text/javascript">
+            window.onload = function()
+            {
+              // fix for windows 8
+              if (navigator.appVersion.indexOf("Windows NT 6.2") != -1)
+                document.head.innerHTML += '<link rel="stylesheet" type="text/css" href="pages/css/windows.chrome.fix.css" />'
             }
-        </style>
-    
-    <link rel="stylesheet" href="{{ mix('css/main.css') }}" />
+            </script>
+    </head>
 
-</head>
-
-<body>
-    <main>
-        <div class="content custom-scrollbar">
-            <div id="login" class="p-8">
-                <div class="form-wrapper md-elevation-8 p-8">
-
-                    <div class="logo bg-secondary">
-                        <span>K</span>
+    <body class="fixed-header ">
+        <div class="register-container full-height sm-p-t-30">
+            <div class="d-flex justify-content-center flex-column full-height ">
+                <h3>Login</h3>
+                <form id="form-login" class="p-t-15" role="form" action="{{ url('/login') }}">
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group form-group-default">
+                                <label>Username</label>
+                                <input type="text" name="username" placeholder="Enter Username" class="form-control" required>
+                            </div>
+                        </div>
                     </div>
-
-                    <div class="title mt-4 mb-8">Log in to your account</div>
-
-                    <form id="kpos-login" action="{{ url('/login') }}" name="loginForm" novalidate>
-                        {{ csrf_field() }}
-                        <div class="form-group mb-4">
-                            <input type="text" class="form-control" name="username" id="loginFormInputEmail" aria-describedby="emailHelp" placeholder=" " />
-                            <label for="loginFormInputEmail">Username</label>
+                    <div class="row">
+                        <div class="col-md-12">
+                            <div class="form-group form-group-default">
+                                <label>Password</label>
+                                <input type="password" name="password" placeholder="Minimum of 4 Charactors" class="form-control" required>
+                            </div>
                         </div>
-
-                        <div class="form-group mb-4">
-                            <input type="password" class="form-control" name="password" id="loginFormInputPassword" placeholder="Password" />
-                            <label for="loginFormInputPassword">Password</label>
-                        </div>
-
-                        <button type="submit" class="btn btn-block btn-secondary my-5 mx-auto" aria-label="LOG IN">
-                            LOG IN
-                        </button>
-                    </form>
-                </div>
+                    </div>
+                    <button class="btn btn-primary btn-cons m-t-10" type="submit">Create a new account</button>
+                </form>
             </div>
         </div>
-    </main> 
-</body>
+        
+        <script type="text/javascript" src="{{ mix('js/all.js') }}" ></script>
+        <script> $(function(){$('#form-login').validate()}); </script>
+        <script type="text/javascript" src="kpos.js"></script>
 
-<script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
-<script type="text/javascript" src="{{ mix('js/all.js') }}"></script>
-<script type="text/javascript" src="js/kpos.js"></script>
+    </body>
 
 </html>

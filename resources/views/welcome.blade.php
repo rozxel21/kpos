@@ -83,7 +83,7 @@
                 </div>
 
                 <div class="links">
-                    <a href="https://laravel.com/docs">Axel</a>
+                    <a href="/logout">Axel</a>
                     <a href="https://laracasts.com">Roz</a>
                     <a href="https://laravel-news.com">Test</a>
                     <a href="https://nova.laravel.com">Nova</a>
